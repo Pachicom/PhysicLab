@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'); /* Подключает необязательный шрифт; при отсутствии сети используется запасной. */
+:root{ /* Начинает правила оформления для :root. */
+--bg:#080c18; /* Настраивает CSS-свойство --bg. */
+--panel:rgba(17,24,43,.88); /* Настраивает CSS-свойство --panel. */
+--panel2:#121a2e; /* Настраивает CSS-свойство --panel2. */
+--line:rgba(153,170,220,.14); /* Настраивает CSS-свойство --line. */
+--text:#eef2ff; /* Настраивает CSS-свойство --text. */
+--muted:#9ba8c5; /* Настраивает CSS-свойство --muted. */
+--purple:#9271ff; /* Настраивает CSS-свойство --purple. */
+--cyan:#6de4e7; /* Настраивает CSS-свойство --cyan. */
+--green:#76e3b1; /* Настраивает CSS-свойство --green. */
+--radius:22px} /* Настраивает CSS-свойство --radius. */
+*{ /* Начинает правила оформления для *. */
+box-sizing:border-box} /* Определяет способ расчёта размеров элемента. */
+html{ /* Начинает правила оформления для html. */
+scroll-behavior:smooth} /* Настраивает поведение прокрутки. */
+body{ /* Начинает правила оформления для body. */
+margin:0; /* Задаёт внешние отступы. */
+background:var(--bg); /* Задаёт фон элемента. */
+color:var(--text); /* Задаёт цвет текста. */
+font-family:Inter,Arial,sans-serif; /* Задаёт семейство шрифтов. */
+line-height:1.55; /* Задаёт высоту строки. */
+overflow-x:hidden} /* Настраивает CSS-свойство overflow-x. */
+button,input{ /* Начинает правила оформления для button,input. */
+font:inherit} /* Настраивает CSS-свойство font. */
+button{ /* Начинает правила оформления для button. */
+cursor:pointer} /* Определяет вид указателя мыши. */
+.background-glow{ /* Начинает правила оформления для .background-glow. */
+position:fixed; /* Задаёт способ позиционирования. */
+width:500px; /* Задаёт ширину элемента. */
+height:500px; /* Задаёт высоту элемента. */
+border-radius:50%; /* Скругляет углы элемента. */
+filter:blur(110px); /* Применяет визуальный фильтр. */
+opacity:.12; /* Задаёт прозрачность. */
+pointer-events:none; /* Настраивает обработку указателя. */
+z-index:-1} /* Задаёт порядок наложения элементов. */
+.glow-one{ /* Начинает правила оформления для .glow-one. */
+background:#7957ff; /* Задаёт фон элемента. */
+top:100px; /* Задаёт отступ от верхнего края. */
+left:-250px} /* Задаёт отступ от левого края. */
+.glow-two{ /* Начинает правила оформления для .glow-two. */
+background:#26b7c9; /* Задаёт фон элемента. */
+right:-250px; /* Задаёт отступ от правого края. */
+top:650px} /* Задаёт отступ от верхнего края. */
+.topbar{ /* Начинает правила оформления для .topbar. */
+height:86px; /* Задаёт высоту элемента. */
+padding:0 max(5vw,24px); /* Задаёт внутренние отступы. */
+display:flex; /* Определяет способ отображения элемента. */
+align-items:center; /* Выравнивает элементы по поперечной оси. */
+justify-content:space-between; /* Распределяет элементы вдоль главной оси. */
+border-bottom:1px solid var(--line); /* Задаёт нижнюю рамку. */
+background:rgba(8,12,24,.8); /* Задаёт фон элемента. */
+backdrop-filter:blur(18px); /* Применяет эффект к фону за элементом. */
+position:sticky; /* Задаёт способ позиционирования. */
+top:0; /* Задаёт отступ от верхнего края. */
+z-index:10} /* Задаёт порядок наложения элементов. */
+.brand{ /* Начинает правила оформления для .brand. */
+display:flex; /* Определяет способ отображения элемента. */
+gap:12px; /* Задаёт промежуток между элементами. */
+align-items:center; /* Выравнивает элементы по поперечной оси. */
+text-decoration:none; /* Настраивает CSS-свойство text-decoration. */
+color:var(--text); /* Задаёт цвет текста. */
+font-weight:800; /* Задаёт насыщенность шрифта. */
+font-size:18px; /* Задаёт размер шрифта. */
+line-height:1.1} /* Задаёт высоту строки. */
+.brand small{ /* Начинает правила оформления для .brand small. */
+display:block; /* Определяет способ отображения элемента. */
+font-size:8px; /* Задаёт размер шрифта. */
+letter-spacing:1.4px; /* Задаёт расстояние между символами. */
+color:var(--muted); /* Задаёт цвет текста. */
+font-weight:600; /* Задаёт насыщенность шрифта. */
+margin-top:6px} /* Настраивает CSS-свойство margin-top. */
+.brand-icon{ /* Начинает правила оформления для .brand-icon. */
+width:39px; /* Задаёт ширину элемента. */
+height:39px; /* Задаёт высоту элемента. */
+border-radius:13px; /* Скругляет углы элемента. */
+display:grid; /* Определяет способ отображения элемента. */
+place-items:center; /* Выравнивает содержимое по двум осям. */
+background:linear-gradient(135deg,#9876ff,#5c4ed5); /* Задаёт фон элемента. */
+box-shadow:0 7px 28px #7059ff38; /* Добавляет тень. */
+font-size:17px} /* Задаёт размер шрифта. */
+.brand-icon span{ /* Начинает правила оформления для .brand-icon span. */
+color:#80f0e3} /* Задаёт цвет текста. */
+.muted{ /* Начинает правила оформления для .muted. */
+color:var(--muted)} /* Задаёт цвет текста. */
+nav{ /* Начинает правила оформления для nav. */
+display:flex; /* Определяет способ отображения элемента. */
+gap:6px} /* Задаёт промежуток между элементами. */
+.nav-button,.model-tab{ /* Начинает правила оформления для .nav-button,.model-tab. */
+border:0; /* Задаёт рамку элемента. */
+background:transparent; /* Задаёт фон элемента. */
+color:var(--muted); /* Задаёт цвет текста. */
+padding:11px 15px; /* Задаёт внутренние отступы. */
+border-radius:10px; /* Скругляет углы элемента. */
+font-size:13px; /* Задаёт размер шрифта. */
+font-weight:600; /* Задаёт насыщенность шрифта. */
+transition:.2s} /* Задаёт плавность изменения свойств. */
+.nav-button:hover,.model-tab:hover{ /* Начинает правила оформления для .nav-button:hover,.model-tab:hover. */
+color:white; /* Задаёт цвет текста. */
+background:#ffffff0b} /* Задаёт фон элемента. */
+.nav-button.active,.model-tab.active{ /* Начинает правила оформления для .nav-button.active,.model-tab.active. */
+background:#9271ff1d; /* Задаёт фон элемента. */
+color:#c8baff} /* Задаёт цвет текста. */
+.top-badge{ /* Начинает правила оформления для .top-badge. */
+font-size:11px; /* Задаёт размер шрифта. */
+color:#b8c7dc; /* Задаёт цвет текста. */
+border:1px solid var(--line); /* Задаёт рамку элемента. */
+padding:8px 12px; /* Задаёт внутренние отступы. */
+border-radius:30px} /* Скругляет углы элемента. */
+.status-dot,.live-pill i{ /* Начинает правила оформления для .status-dot,.live-pill i. */
+display:inline-block; /* Определяет способ отображения элемента. */
+width:7px; /* Задаёт ширину элемента. */
+height:7px; /* Задаёт высоту элемента. */
+border-radius:50%; /* Скругляет углы элемента. */
+background:var(--green); /* Задаёт фон элемента. */
+margin-right:7px; /* Настраивает CSS-свойство margin-right. */
+box-shadow:0 0 12px #76e3b180} /* Добавляет тень. */
+main{ /* Начинает правила оформления для main. */
+width:min(1200px,90%); /* Задаёт ширину элемента. */
+margin:auto} /* Задаёт внешние отступы. */
+.hero{ /* Начинает правила оформления для .hero. */
+padding:90px 0 66px; /* Задаёт внутренние отступы. */
+max-width:760px} /* Ограничивает максимальную ширину. */
+.eyebrow{ /* Начинает правила оформления для .eyebrow. */
+font-size:10px; /* Задаёт размер шрифта. */
+letter-spacing:2px; /* Задаёт расстояние между символами. */
+color:#b8a6ff; /* Задаёт цвет текста. */
+font-weight:800; /* Задаёт насыщенность шрифта. */
+margin:0 0 15px} /* Задаёт внешние отступы. */
+.eyebrow-line{ /* Начинает правила оформления для .eyebrow-line. */
+display:inline-block; /* Определяет способ отображения элемента. */
+width:25px; /* Задаёт ширину элемента. */
+height:2px; /* Задаёт высоту элемента. */
+background:var(--purple); /* Задаёт фон элемента. */
+vertical-align:middle; /* Выравнивает элемент относительно строки. */
+margin-right:8px} /* Настраивает CSS-свойство margin-right. */
+.hero h1{ /* Начинает правила оформления для .hero h1. */
+font-size:clamp(42px,6vw,72px); /* Задаёт размер шрифта. */
+line-height:1.08; /* Задаёт высоту строки. */
+letter-spacing:-3px; /* Задаёт расстояние между символами. */
+margin:0; /* Задаёт внешние отступы. */
+font-weight:800} /* Задаёт насыщенность шрифта. */
+.gradient-text{ /* Начинает правила оформления для .gradient-text. */
+background:linear-gradient(100deg,#b8a5ff,#75e4df); /* Задаёт фон элемента. */
+color:transparent; /* Задаёт цвет текста. */
+background-clip:text} /* Настраивает CSS-свойство background-clip. */
+.hero-copy{ /* Начинает правила оформления для .hero-copy. */
+font-size:16px; /* Задаёт размер шрифта. */
+color:var(--muted); /* Задаёт цвет текста. */
+max-width:600px; /* Ограничивает максимальную ширину. */
+margin:23px 0 30px} /* Задаёт внешние отступы. */
+.hero-stats{ /* Начинает правила оформления для .hero-stats. */
+display:flex; /* Определяет способ отображения элемента. */
+gap:40px; /* Задаёт промежуток между элементами. */
+flex-wrap:wrap} /* Разрешает перенос flex-элементов. */
+.hero-stats div{ /* Начинает правила оформления для .hero-stats div. */
+display:flex; /* Определяет способ отображения элемента. */
+flex-direction:column} /* Задаёт направление flex-контейнера. */
+.hero-stats strong{ /* Начинает правила оформления для .hero-stats strong. */
+font-size:21px} /* Задаёт размер шрифта. */
+.hero-stats span{ /* Начинает правила оформления для .hero-stats span. */
+font-size:11px; /* Задаёт размер шрифта. */
+color:var(--muted); /* Задаёт цвет текста. */
+margin-top:3px} /* Настраивает CSS-свойство margin-top. */
+.page-section{ /* Начинает правила оформления для .page-section. */
+padding:15px 0 70px; /* Задаёт внутренние отступы. */
+scroll-margin-top:100px} /* Настраивает CSS-свойство scroll-margin-top. */
+.hidden{ /* Начинает правила оформления для .hidden. */
+display:none!important} /* Определяет способ отображения элемента. */
+.section-heading{ /* Начинает правила оформления для .section-heading. */
+display:flex; /* Определяет способ отображения элемента. */
+align-items:end; /* Выравнивает элементы по поперечной оси. */
+justify-content:space-between; /* Распределяет элементы вдоль главной оси. */
+gap:20px; /* Задаёт промежуток между элементами. */
+margin-bottom:25px} /* Настраивает CSS-свойство margin-bottom. */
+.section-heading h2,.bottom-cta h2{ /* Начинает правила оформления для .section-heading h2,.bottom-cta h2. */
+font-size:30px; /* Задаёт размер шрифта. */
+letter-spacing:-1px; /* Задаёт расстояние между символами. */
+line-height:1.2; /* Задаёт высоту строки. */
+margin:0} /* Задаёт внешние отступы. */
+.section-heading .eyebrow{ /* Начинает правила оформления для .section-heading .eyebrow. */
+margin-bottom:8px} /* Настраивает CSS-свойство margin-bottom. */
+.section-heading>div>p:last-child{ /* Начинает правила оформления для .section-heading>div>p:last-child. */
+margin-bottom:0} /* Настраивает CSS-свойство margin-bottom. */
+.segmented{ /* Начинает правила оформления для .segmented. */
+padding:5px; /* Задаёт внутренние отступы. */
+border:1px solid var(--line); /* Задаёт рамку элемента. */
+background:#0c1222; /* Задаёт фон элемента. */
+border-radius:13px; /* Скругляет углы элемента. */
+display:flex} /* Определяет способ отображения элемента. */
+.model-tab{ /* Начинает правила оформления для .model-tab. */
+white-space:nowrap} /* Управляет переносом строк. */
+.model-layout{ /* Начинает правила оформления для .model-layout. */
+display:grid; /* Определяет способ отображения элемента. */
+grid-template-columns:minmax(0,1.4fr) minmax(320px,.9fr); /* Определяет столбцы CSS Grid. */
+gap:18px} /* Задаёт промежуток между элементами. */
+.panel{ /* Начинает правила оформления для .panel. */
+background:var(--panel); /* Задаёт фон элемента. */
+border:1px solid var(--line); /* Задаёт рамку элемента. */
+border-radius:var(--radius); /* Скругляет углы элемента. */
+box-shadow:0 20px 60px #00000015; /* Добавляет тень. */
+backdrop-filter:blur(12px)} /* Применяет эффект к фону за элементом. */
+.visual-panel,.controls-panel{ /* Начинает правила оформления для .visual-panel,.controls-panel. */
+padding:25px} /* Задаёт внутренние отступы. */
+.panel-top{ /* Начинает правила оформления для .panel-top. */
+display:flex; /* Определяет способ отображения элемента. */
+justify-content:space-between; /* Распределяет элементы вдоль главной оси. */
+align-items:center; /* Выравнивает элементы по поперечной оси. */
+gap:12px} /* Задаёт промежуток между элементами. */
+.tiny-label{ /* Начинает правила оформления для .tiny-label. */
+display:block; /* Определяет способ отображения элемента. */
+color:#8b9abb; /* Задаёт цвет текста. */
+font-size:9px; /* Задаёт размер шрифта. */
+letter-spacing:1.6px; /* Задаёт расстояние между символами. */
+font-weight:800; /* Задаёт насыщенность шрифта. */
+margin-bottom:7px} /* Настраивает CSS-свойство margin-bottom. */
+.panel h3{ /* Начинает правила оформления для .panel h3. */
+margin:0; /* Задаёт внешние отступы. */
+font-size:19px; /* Задаёт размер шрифта. */
+letter-spacing:-.4px} /* Задаёт расстояние между символами. */
+.live-pill{ /* Начинает правила оформления для .live-pill. */
+font-size:8px; /* Задаёт размер шрифта. */
+letter-spacing:.8px; /* Задаёт расстояние между символами. */
+color:#a4e9cf; /* Задаёт цвет текста. */
+border:1px solid #76e3b12c; /* Задаёт рамку элемента. */
+padding:7px 9px; /* Задаёт внутренние отступы. */
+border-radius:30px; /* Скругляет углы элемента. */
+white-space:nowrap} /* Управляет переносом строк. */
+.live-pill i{ /* Начинает правила оформления для .live-pill i. */
+width:5px; /* Задаёт ширину элемента. */
+height:5px} /* Задаёт высоту элемента. */
+.panel-description{ /* Начинает правила оформления для .panel-description. */
+font-size:12px; /* Задаёт размер шрифта. */
+color:var(--muted); /* Задаёт цвет текста. */
+margin:12px 0 20px} /* Задаёт внешние отступы. */
+.canvas-wrap{ /* Начинает правила оформления для .canvas-wrap. */
+position:relative; /* Задаёт способ позиционирования. */
+border:1px solid #9eaff015; /* Задаёт рамку элемента. */
+background:radial-gradient(ellipse at 50% 45%,#1c2850 0%,#0b1224 68%); /* Задаёт фон элемента. */
+border-radius:16px; /* Скругляет углы элемента. */
+overflow:hidden} /* Управляет содержимым за границами. */
+.canvas-wrap canvas{ /* Начинает правила оформления для .canvas-wrap canvas. */
+width:100%; /* Задаёт ширину элемента. */
+height:330px; /* Задаёт высоту элемента. */
+display:block} /* Определяет способ отображения элемента. */
+.canvas-caption{ /* Начинает правила оформления для .canvas-caption. */
+position:absolute; /* Задаёт способ позиционирования. */
+bottom:12px; /* Задаёт отступ от нижнего края. */
+left:14px; /* Задаёт отступ от левого края. */
+right:14px; /* Задаёт отступ от правого края. */
+display:flex; /* Определяет способ отображения элемента. */
+justify-content:space-between; /* Распределяет элементы вдоль главной оси. */
+font-size:8px; /* Задаёт размер шрифта. */
+letter-spacing:1px; /* Задаёт расстояние между символами. */
+color:#8290b1; /* Задаёт цвет текста. */
+pointer-events:none} /* Настраивает обработку указателя. */
+.controls-row{ /* Начинает правила оформления для .controls-row. */
+display:flex; /* Определяет способ отображения элемента. */
+gap:9px; /* Задаёт промежуток между элементами. */
+margin-top:16px; /* Настраивает CSS-свойство margin-top. */
+flex-wrap:wrap} /* Разрешает перенос flex-элементов. */
+.button{ /* Начинает правила оформления для .button. */
+border:1px solid transparent; /* Задаёт рамку элемента. */
+padding:11px 15px; /* Задаёт внутренние отступы. */
+border-radius:11px; /* Скругляет углы элемента. */
+font-weight:700; /* Задаёт насыщенность шрифта. */
+font-size:12px; /* Задаёт размер шрифта. */
+transition:transform .2s,background .2s} /* Задаёт плавность изменения свойств. */
+.button:hover:not(:disabled){ /* Начинает правила оформления для .button:hover:not(:disabled). */
+transform:translateY(-2px)} /* Изменяет положение или форму элемента. */
+.button:disabled{ /* Начинает правила оформления для .button:disabled. */
+opacity:.4; /* Задаёт прозрачность. */
+cursor:not-allowed} /* Определяет вид указателя мыши. */
+.primary{ /* Начинает правила оформления для .primary. */
+background:linear-gradient(120deg,#9473ff,#7060df); /* Задаёт фон элемента. */
+color:white; /* Задаёт цвет текста. */
+box-shadow:0 8px 25px #7257ff20} /* Добавляет тень. */
+.secondary{ /* Начинает правила оформления для .secondary. */
+background:#ffffff07; /* Задаёт фон элемента. */
+border-color:var(--line); /* Настраивает CSS-свойство border-color. */
+color:#c9d2e9} /* Задаёт цвет текста. */
+.controls-panel{ /* Начинает правила оформления для .controls-panel. */
+display:flex; /* Определяет способ отображения элемента. */
+flex-direction:column; /* Задаёт направление flex-контейнера. */
+gap:23px} /* Задаёт промежуток между элементами. */
+.number-chip{ /* Начинает правила оформления для .number-chip. */
+border:1px solid #9271ff44; /* Задаёт рамку элемента. */
+background:#9271ff16; /* Задаёт фон элемента. */
+color:#c4b5fd; /* Задаёт цвет текста. */
+border-radius:10px; /* Скругляет углы элемента. */
+padding:7px 11px; /* Задаёт внутренние отступы. */
+font-size:12px; /* Задаёт размер шрифта. */
+font-weight:800} /* Задаёт насыщенность шрифта. */
+.control-group{ /* Начинает правила оформления для .control-group. */
+display:flex; /* Определяет способ отображения элемента. */
+flex-direction:column; /* Задаёт направление flex-контейнера. */
+gap:10px} /* Задаёт промежуток между элементами. */
+.control-title{ /* Начинает правила оформления для .control-title. */
+display:flex; /* Определяет способ отображения элемента. */
+align-items:center; /* Выравнивает элементы по поперечной оси. */
+justify-content:space-between; /* Распределяет элементы вдоль главной оси. */
+font-size:12px; /* Задаёт размер шрифта. */
+font-weight:600} /* Задаёт насыщенность шрифта. */
+.control-title output{ /* Начинает правила оформления для .control-title output. */
+font-size:11px; /* Задаёт размер шрифта. */
+color:#c5b8ff; /* Задаёт цвет текста. */
+background:#9271ff15; /* Задаёт фон элемента. */
+padding:5px 8px; /* Задаёт внутренние отступы. */
+border-radius:7px} /* Скругляет углы элемента. */
+.control-group input[type=range]{ /* Начинает правила оформления для .control-group input[type=range]. */
+width:100%; /* Задаёт ширину элемента. */
+accent-color:#9a7bff; /* Задаёт акцентный цвет элементов управления. */
+cursor:pointer} /* Определяет вид указателя мыши. */
+.range-labels{ /* Начинает правила оформления для .range-labels. */
+display:flex; /* Определяет способ отображения элемента. */
+justify-content:space-between; /* Распределяет элементы вдоль главной оси. */
+color:#7886a6; /* Задаёт цвет текста. */
+font-size:9px; /* Задаёт размер шрифта. */
+margin-top:-6px} /* Настраивает CSS-свойство margin-top. */
+.metrics-grid{ /* Начинает правила оформления для .metrics-grid. */
+display:grid; /* Определяет способ отображения элемента. */
+grid-template-columns:1fr 1fr; /* Определяет столбцы CSS Grid. */
+gap:10px} /* Задаёт промежуток между элементами. */
+.metrics-grid.single{ /* Начинает правила оформления для .metrics-grid.single. */
+grid-template-columns:1fr} /* Определяет столбцы CSS Grid. */
+.metric{ /* Начинает правила оформления для .metric. */
+background:#ffffff05; /* Задаёт фон элемента. */
+border:1px solid var(--line); /* Задаёт рамку элемента. */
+padding:14px; /* Задаёт внутренние отступы. */
+border-radius:13px; /* Скругляет углы элемента. */
+min-width:0} /* Ограничивает минимальную ширину. */
+.metric>span{ /* Начинает правила оформления для .metric>span. */
+display:block; /* Определяет способ отображения элемента. */
+font-size:8px; /* Задаёт размер шрифта. */
+letter-spacing:1.2px; /* Задаёт расстояние между символами. */
+color:#9aa8c8; /* Задаёт цвет текста. */
+font-weight:800} /* Задаёт насыщенность шрифта. */
+.metric strong{ /* Начинает правила оформления для .metric strong. */
+display:block; /* Определяет способ отображения элемента. */
+font-size:27px; /* Задаёт размер шрифта. */
+margin:7px 0 1px; /* Задаёт внешние отступы. */
+letter-spacing:-1px} /* Задаёт расстояние между символами. */
+.metric strong small{ /* Начинает правила оформления для .metric strong small. */
+font-size:12px; /* Задаёт размер шрифта. */
+color:var(--muted); /* Задаёт цвет текста. */
+font-weight:500} /* Задаёт насыщенность шрифта. */
+.metric em{ /* Начинает правила оформления для .metric em. */
+font-style:normal; /* Настраивает CSS-свойство font-style. */
+color:#7786a7; /* Задаёт цвет текста. */
+font-size:9px} /* Задаёт размер шрифта. */
+.formula-box{ /* Начинает правила оформления для .formula-box. */
+border:1px solid #9271ff30; /* Задаёт рамку элемента. */
+background:linear-gradient(135deg,#9271ff0d,#6de4e708); /* Задаёт фон элемента. */
+padding:15px; /* Задаёт внутренние отступы. */
+border-radius:13px} /* Скругляет углы элемента. */
+.formula-box>span{ /* Начинает правила оформления для .formula-box>span. */
+display:block; /* Определяет способ отображения элемента. */
+color:#a99af2; /* Задаёт цвет текста. */
+font-size:8px; /* Задаёт размер шрифта. */
+letter-spacing:1.3px; /* Задаёт расстояние между символами. */
+font-weight:800} /* Задаёт насыщенность шрифта. */
+.formula-box>div{ /* Начинает правила оформления для .formula-box>div. */
+font-size:18px; /* Задаёт размер шрифта. */
+font-weight:700; /* Задаёт насыщенность шрифта. */
+margin:8px 0} /* Задаёт внешние отступы. */
+.formula-box p{ /* Начинает правила оформления для .formula-box p. */
+color:var(--muted); /* Задаёт цвет текста. */
+font-size:10px; /* Задаёт размер шрифта. */
+margin:0} /* Задаёт внешние отступы. */
+.hint-box{ /* Начинает правила оформления для .hint-box. */
+display:flex; /* Определяет способ отображения элемента. */
+gap:10px; /* Задаёт промежуток между элементами. */
+align-items:start; /* Выравнивает элементы по поперечной оси. */
+background:#6de4e709; /* Задаёт фон элемента. */
+border:1px solid #6de4e71c; /* Задаёт рамку элемента. */
+border-radius:12px; /* Скругляет углы элемента. */
+padding:12px; /* Задаёт внутренние отступы. */
+color:#b3c7d8; /* Задаёт цвет текста. */
+font-size:11px} /* Задаёт размер шрифта. */
+.triangle-wrap canvas{ /* Начинает правила оформления для .triangle-wrap canvas. */
+height:330px} /* Задаёт высоту элемента. */
+.quiz-layout{ /* Начинает правила оформления для .quiz-layout. */
+display:grid; /* Определяет способ отображения элемента. */
+grid-template-columns:minmax(0,1.4fr) minmax(250px,.6fr); /* Определяет столбцы CSS Grid. */
+gap:18px} /* Задаёт промежуток между элементами. */
+.quiz-panel,.results-panel,.research-table-panel,.limitations{ /* Начинает правила оформления для .quiz-panel,.results-panel,.research-table-panel,.limitations. */
+padding:25px} /* Задаёт внутренние отступы. */
+.quiz-progress{ /* Начинает правила оформления для .quiz-progress. */
+display:flex; /* Определяет способ отображения элемента. */
+justify-content:space-between; /* Распределяет элементы вдоль главной оси. */
+color:#9eadd0; /* Задаёт цвет текста. */
+font-size:9px; /* Задаёт размер шрифта. */
+letter-spacing:1px; /* Задаёт расстояние между символами. */
+font-weight:800} /* Задаёт насыщенность шрифта. */
+.progress-track{ /* Начинает правила оформления для .progress-track. */
+height:4px; /* Задаёт высоту элемента. */
+background:#ffffff0b; /* Задаёт фон элемента. */
+border-radius:5px; /* Скругляет углы элемента. */
+margin:14px 0 25px; /* Задаёт внешние отступы. */
+overflow:hidden} /* Управляет содержимым за границами. */
+.progress-track div{ /* Начинает правила оформления для .progress-track div. */
+height:100%; /* Задаёт высоту элемента. */
+width:10%; /* Задаёт ширину элемента. */
+background:linear-gradient(90deg,#9473ff,#6de4e7); /* Задаёт фон элемента. */
+transition:width .3s} /* Задаёт плавность изменения свойств. */
+.quiz-panel h3{ /* Начинает правила оформления для .quiz-panel h3. */
+font-size:22px; /* Задаёт размер шрифта. */
+line-height:1.4; /* Задаёт высоту строки. */
+margin:0 0 22px} /* Задаёт внешние отступы. */
+.answers{ /* Начинает правила оформления для .answers. */
+display:grid; /* Определяет способ отображения элемента. */
+gap:10px} /* Задаёт промежуток между элементами. */
+.answer-option{ /* Начинает правила оформления для .answer-option. */
+width:100%; /* Задаёт ширину элемента. */
+text-align:left; /* Задаёт выравнивание текста. */
+background:#ffffff04; /* Задаёт фон элемента. */
+border:1px solid var(--line); /* Задаёт рамку элемента. */
+color:var(--text); /* Задаёт цвет текста. */
+border-radius:12px; /* Скругляет углы элемента. */
+padding:14px; /* Задаёт внутренние отступы. */
+font-size:13px; /* Задаёт размер шрифта. */
+transition:.2s} /* Задаёт плавность изменения свойств. */
+.answer-option:hover:not(:disabled){ /* Начинает правила оформления для .answer-option:hover:not(:disabled). */
+border-color:#9271ff70; /* Настраивает CSS-свойство border-color. */
+background:#9271ff0b} /* Задаёт фон элемента. */
+.answer-option.correct{ /* Начинает правила оформления для .answer-option.correct. */
+border-color:#76e3b1; /* Настраивает CSS-свойство border-color. */
+background:#76e3b112} /* Задаёт фон элемента. */
+.answer-option.wrong{ /* Начинает правила оформления для .answer-option.wrong. */
+border-color:#ff7f98; /* Настраивает CSS-свойство border-color. */
+background:#ff7f9812} /* Задаёт фон элемента. */
+.feedback{ /* Начинает правила оформления для .feedback. */
+min-height:28px; /* Ограничивает минимальную высоту. */
+font-size:12px; /* Задаёт размер шрифта. */
+color:var(--muted); /* Задаёт цвет текста. */
+margin-top:14px} /* Настраивает CSS-свойство margin-top. */
+.quiz-actions{ /* Начинает правила оформления для .quiz-actions. */
+display:flex; /* Определяет способ отображения элемента. */
+justify-content:flex-end; /* Распределяет элементы вдоль главной оси. */
+margin-top:12px} /* Настраивает CSS-свойство margin-top. */
+.results-panel{ /* Начинает правила оформления для .results-panel. */
+text-align:center} /* Задаёт выравнивание текста. */
+.score-circle{ /* Начинает правила оформления для .score-circle. */
+width:145px; /* Задаёт ширину элемента. */
+height:145px; /* Задаёт высоту элемента. */
+border:7px solid #9271ff2b; /* Задаёт рамку элемента. */
+border-top-color:#9271ff; /* Настраивает CSS-свойство border-top-color. */
+border-right-color:#6de4e7; /* Настраивает CSS-свойство border-right-color. */
+border-radius:50%; /* Скругляет углы элемента. */
+margin:25px auto 15px; /* Задаёт внешние отступы. */
+display:flex; /* Определяет способ отображения элемента. */
+flex-direction:column; /* Задаёт направление flex-контейнера. */
+align-items:center; /* Выравнивает элементы по поперечной оси. */
+justify-content:center} /* Распределяет элементы вдоль главной оси. */
+.score-circle strong{ /* Начинает правила оформления для .score-circle strong. */
+font-size:36px} /* Задаёт размер шрифта. */
+.score-circle span{ /* Начинает правила оформления для .score-circle span. */
+font-size:10px; /* Задаёт размер шрифта. */
+color:var(--muted)} /* Задаёт цвет текста. */
+.results-panel>p{ /* Начинает правила оформления для .results-panel>p. */
+font-size:12px; /* Задаёт размер шрифта. */
+color:var(--muted)} /* Задаёт цвет текста. */
+.history-box{ /* Начинает правила оформления для .history-box. */
+text-align:left; /* Задаёт выравнивание текста. */
+border-top:1px solid var(--line); /* Задаёт верхнюю рамку. */
+padding-top:18px; /* Настраивает CSS-свойство padding-top. */
+margin-top:25px} /* Настраивает CSS-свойство margin-top. */
+.history-box h4{ /* Начинает правила оформления для .history-box h4. */
+font-size:12px; /* Задаёт размер шрифта. */
+margin:0 0 12px} /* Задаёт внешние отступы. */
+.history-box div{ /* Начинает правила оформления для .history-box div. */
+font-size:11px; /* Задаёт размер шрифта. */
+color:var(--muted); /* Задаёт цвет текста. */
+line-height:1.9} /* Задаёт высоту строки. */
+.text-button{ /* Начинает правила оформления для .text-button. */
+background:none; /* Задаёт фон элемента. */
+border:0; /* Задаёт рамку элемента. */
+color:#b7a7ff; /* Задаёт цвет текста. */
+font-size:10px; /* Задаёт размер шрифта. */
+padding:12px 0 0} /* Задаёт внутренние отступы. */
+.research-grid{ /* Начинает правила оформления для .research-grid. */
+display:grid; /* Определяет способ отображения элемента. */
+grid-template-columns:repeat(4,1fr); /* Определяет столбцы CSS Grid. */
+gap:14px; /* Задаёт промежуток между элементами. */
+margin-bottom:18px} /* Настраивает CSS-свойство margin-bottom. */
+.research-card{ /* Начинает правила оформления для .research-card. */
+padding:21px} /* Задаёт внутренние отступы. */
+.research-number{ /* Начинает правила оформления для .research-number. */
+display:inline-grid; /* Определяет способ отображения элемента. */
+place-items:center; /* Выравнивает содержимое по двум осям. */
+width:34px; /* Задаёт ширину элемента. */
+height:34px; /* Задаёт высоту элемента. */
+border-radius:10px; /* Скругляет углы элемента. */
+background:#9271ff17; /* Задаёт фон элемента. */
+color:#bcaaff; /* Задаёт цвет текста. */
+font-weight:800; /* Задаёт насыщенность шрифта. */
+font-size:11px; /* Задаёт размер шрифта. */
+margin-bottom:25px} /* Настраивает CSS-свойство margin-bottom. */
+.research-card h3{ /* Начинает правила оформления для .research-card h3. */
+font-size:16px; /* Задаёт размер шрифта. */
+margin-bottom:10px} /* Настраивает CSS-свойство margin-bottom. */
+.research-card p,.limitations li{ /* Начинает правила оформления для .research-card p,.limitations li. */
+font-size:11px; /* Задаёт размер шрифта. */
+color:var(--muted); /* Задаёт цвет текста. */
+line-height:1.8} /* Задаёт высоту строки. */
+.research-card p{ /* Начинает правила оформления для .research-card p. */
+margin:0} /* Задаёт внешние отступы. */
+.research-table-panel{ /* Начинает правила оформления для .research-table-panel. */
+margin-bottom:18px} /* Настраивает CSS-свойство margin-bottom. */
+.research-table-panel>p{ /* Начинает правила оформления для .research-table-panel>p. */
+font-size:11px} /* Задаёт размер шрифта. */
+.table-scroll{ /* Начинает правила оформления для .table-scroll. */
+overflow-x:auto; /* Настраивает CSS-свойство overflow-x. */
+margin:20px 0} /* Задаёт внешние отступы. */
+.table-scroll table{ /* Начинает правила оформления для .table-scroll table. */
+border-collapse:collapse; /* Настраивает CSS-свойство border-collapse. */
+width:100%; /* Задаёт ширину элемента. */
+min-width:600px; /* Ограничивает минимальную ширину. */
+font-size:11px} /* Задаёт размер шрифта. */
+.table-scroll th,.table-scroll td{ /* Начинает правила оформления для .table-scroll th,.table-scroll td. */
+text-align:left; /* Задаёт выравнивание текста. */
+padding:13px; /* Задаёт внутренние отступы. */
+border-bottom:1px solid var(--line)} /* Задаёт нижнюю рамку. */
+.table-scroll th{ /* Начинает правила оформления для .table-scroll th. */
+color:#b7a7ff; /* Задаёт цвет текста. */
+font-size:9px; /* Задаёт размер шрифта. */
+letter-spacing:.6px} /* Задаёт расстояние между символами. */
+.table-scroll td{ /* Начинает правила оформления для .table-scroll td. */
+color:var(--muted)} /* Задаёт цвет текста. */
+.limitations ul{ /* Начинает правила оформления для .limitations ul. */
+padding-left:20px} /* Настраивает CSS-свойство padding-left. */
+.bottom-cta{ /* Начинает правила оформления для .bottom-cta. */
+display:flex; /* Определяет способ отображения элемента. */
+justify-content:space-between; /* Распределяет элементы вдоль главной оси. */
+align-items:center; /* Выравнивает элементы по поперечной оси. */
+gap:25px; /* Задаёт промежуток между элементами. */
+border:1px solid var(--line); /* Задаёт рамку элемента. */
+background:linear-gradient(120deg,#9271ff12,#6de4e707); /* Задаёт фон элемента. */
+border-radius:22px; /* Скругляет углы элемента. */
+padding:30px; /* Задаёт внутренние отступы. */
+margin:20px 0 65px} /* Задаёт внешние отступы. */
+.bottom-cta .eyebrow{ /* Начинает правила оформления для .bottom-cta .eyebrow. */
+margin-bottom:8px} /* Настраивает CSS-свойство margin-bottom. */
+footer{ /* Начинает правила оформления для footer. */
+border-top:1px solid var(--line); /* Задаёт верхнюю рамку. */
+padding:25px 5vw; /* Задаёт внутренние отступы. */
+display:flex; /* Определяет способ отображения элемента. */
+align-items:center; /* Выравнивает элементы по поперечной оси. */
+justify-content:space-between; /* Распределяет элементы вдоль главной оси. */
+gap:15px; /* Задаёт промежуток между элементами. */
+color:#7583a3; /* Задаёт цвет текста. */
+font-size:9px} /* Задаёт размер шрифта. */
+.small-brand{ /* Начинает правила оформления для .small-brand. */
+font-size:14px} /* Задаёт размер шрифта. */
+.small-brand .brand-icon{ /* Начинает правила оформления для .small-brand .brand-icon. */
+width:29px; /* Задаёт ширину элемента. */
+height:29px; /* Задаёт высоту элемента. */
+border-radius:9px; /* Скругляет углы элемента. */
+font-size:13px} /* Задаёт размер шрифта. */
+@media(max-width:900px){ /* Начинает правила адаптивности или доступности. */
+.topbar{ /* Начинает правила оформления для .topbar. */
+padding:0 5%; /* Задаёт внутренние отступы. */
+height:auto; /* Задаёт высоту элемента. */
+min-height:76px; /* Ограничивает минимальную высоту. */
+flex-wrap:wrap; /* Разрешает перенос flex-элементов. */
+gap:10px; /* Задаёт промежуток между элементами. */
+padding-top:12px; /* Настраивает CSS-свойство padding-top. */
+padding-bottom:12px} /* Настраивает CSS-свойство padding-bottom. */
+.topbar nav{ /* Начинает правила оформления для .topbar nav. */
+order:3; /* Настраивает CSS-свойство order. */
+width:100%; /* Задаёт ширину элемента. */
+justify-content:center} /* Распределяет элементы вдоль главной оси. */
+.top-badge{ /* Начинает правила оформления для .top-badge. */
+font-size:9px} /* Задаёт размер шрифта. */
+.model-layout,.quiz-layout{ /* Начинает правила оформления для .model-layout,.quiz-layout. */
+grid-template-columns:1fr} /* Определяет столбцы CSS Grid. */
+.research-grid{ /* Начинает правила оформления для .research-grid. */
+grid-template-columns:repeat(2,1fr)} /* Определяет столбцы CSS Grid. */
+.hero{ /* Начинает правила оформления для .hero. */
+padding-top:65px} /* Настраивает CSS-свойство padding-top. */
+.section-heading{ /* Начинает правила оформления для .section-heading. */
+align-items:start; /* Выравнивает элементы по поперечной оси. */
+flex-direction:column} /* Задаёт направление flex-контейнера. */
+.segmented{ /* Начинает правила оформления для .segmented. */
+max-width:100%; /* Ограничивает максимальную ширину. */
+overflow-x:auto} /* Настраивает CSS-свойство overflow-x. */
+.controls-panel{ /* Начинает правила оформления для .controls-panel. */
+gap:19px} /* Задаёт промежуток между элементами. */
+} /* Закрывает CSS-блок выше. */
+@media(max-width:560px){ /* Начинает правила адаптивности или доступности. */
+main{ /* Начинает правила оформления для main. */
+width:92%} /* Задаёт ширину элемента. */
+.hero h1{ /* Начинает правила оформления для .hero h1. */
+letter-spacing:-2px} /* Задаёт расстояние между символами. */
+.hero{ /* Начинает правила оформления для .hero. */
+padding:55px 0} /* Задаёт внутренние отступы. */
+.hero-stats{ /* Начинает правила оформления для .hero-stats. */
+gap:22px} /* Задаёт промежуток между элементами. */
+.hero-stats strong{ /* Начинает правила оформления для .hero-stats strong. */
+font-size:18px} /* Задаёт размер шрифта. */
+.hero-stats span{ /* Начинает правила оформления для .hero-stats span. */
+font-size:9px; /* Задаёт размер шрифта. */
+max-width:95px} /* Ограничивает максимальную ширину. */
+.brand{ /* Начинает правила оформления для .brand. */
+font-size:15px} /* Задаёт размер шрифта. */
+.brand small{ /* Начинает правила оформления для .brand small. */
+font-size:7px} /* Задаёт размер шрифта. */
+.top-badge{ /* Начинает правила оформления для .top-badge. */
+display:none} /* Определяет способ отображения элемента. */
+.nav-button{ /* Начинает правила оформления для .nav-button. */
+padding:9px 10px; /* Задаёт внутренние отступы. */
+font-size:11px} /* Задаёт размер шрифта. */
+.section-heading h2,.bottom-cta h2{ /* Начинает правила оформления для .section-heading h2,.bottom-cta h2. */
+font-size:25px} /* Задаёт размер шрифта. */
+.visual-panel,.controls-panel,.quiz-panel,.results-panel,.research-table-panel,.limitations{ /* Начинает правила оформления для .visual-panel,.controls-panel,.quiz-panel,.results-panel,.research-table-panel,.limitations. */
+padding:17px} /* Задаёт внутренние отступы. */
+.panel-top{ /* Начинает правила оформления для .panel-top. */
+align-items:start} /* Выравнивает элементы по поперечной оси. */
+.live-pill{ /* Начинает правила оформления для .live-pill. */
+font-size:7px} /* Задаёт размер шрифта. */
+.canvas-wrap canvas{ /* Начинает правила оформления для .canvas-wrap canvas. */
+height:260px} /* Задаёт высоту элемента. */
+.triangle-wrap canvas{ /* Начинает правила оформления для .triangle-wrap canvas. */
+height:260px} /* Задаёт высоту элемента. */
+.metrics-grid{ /* Начинает правила оформления для .metrics-grid. */
+gap:7px} /* Задаёт промежуток между элементами. */
+.metric{ /* Начинает правила оформления для .metric. */
+padding:11px} /* Задаёт внутренние отступы. */
+.metric strong{ /* Начинает правила оформления для .metric strong. */
+font-size:22px} /* Задаёт размер шрифта. */
+.research-grid{ /* Начинает правила оформления для .research-grid. */
+grid-template-columns:1fr} /* Определяет столбцы CSS Grid. */
+.research-number{ /* Начинает правила оформления для .research-number. */
+margin-bottom:15px} /* Настраивает CSS-свойство margin-bottom. */
+.bottom-cta{ /* Начинает правила оформления для .bottom-cta. */
+padding:22px; /* Задаёт внутренние отступы. */
+align-items:start; /* Выравнивает элементы по поперечной оси. */
+flex-direction:column} /* Задаёт направление flex-контейнера. */
+footer{ /* Начинает правила оформления для footer. */
+flex-wrap:wrap} /* Разрешает перенос flex-элементов. */
+.formula-box>div{ /* Начинает правила оформления для .formula-box>div. */
+font-size:16px} /* Задаёт размер шрифта. */
+} /* Закрывает CSS-блок выше. */
+@media(prefers-reduced-motion:reduce){ /* Начинает правила адаптивности или доступности. */
+*,*::before,*::after{ /* Начинает правила оформления для *,*::before,*::after. */
+scroll-behavior:auto!important; /* Настраивает поведение прокрутки. */
+animation-duration:.01ms!important; /* Настраивает CSS-свойство animation-duration. */
+transition-duration:.01ms!important} /* Настраивает CSS-свойство transition-duration. */
+} /* Закрывает CSS-блок выше. */
+/* Позволяет четырём вкладкам экспериментов прокручиваться на узких экранах. */
+.segmented{ /* Начинает правила оформления для .segmented. */
+max-width:100%; /* Ограничивает максимальную ширину. */
+overflow-x:auto} /* Настраивает CSS-свойство overflow-x. */
+/* Не даёт подписям новых моделей выходить за границы панели. */
+#springCanvas,#ohmCanvas{ /* Начинает правила оформления для #springCanvas,#ohmCanvas. */
+min-width:0} /* Ограничивает минимальную ширину. */
+
+
+/* Дополнительные вкладки экспериментов: перенос на несколько строк для удобной навигации. */
+.segmented{flex-wrap:wrap;gap:5px;max-width:100%;align-items:center}
+.model-tab{font-size:10px;padding:9px 10px}
+.advanced-canvas-wrap{min-height:270px}
+.advanced-canvas-wrap canvas{width:100%;height:270px;display:block}
+.advanced-reset{margin-top:16px}
+@media(max-width:760px){.segmented{display:flex;overflow:visible}.model-tab{font-size:9px;padding:8px 7px}.advanced-model{grid-template-columns:minmax(0,1fr)}}
+
+/* Переключатель предмета в разделе проверки знаний. */
+.quiz-subject-switch{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.quiz-subject{border:1px solid #293653;border-radius:12px;background:#10182a;color:#aab8d7;padding:12px 18px;font:inherit;font-weight:750;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.quiz-subject:hover{transform:translateY(-1px);border-color:#8eabff}
+.quiz-subject.active{background:linear-gradient(135deg,#6f5bd3,#3a7f9d);border-color:#a99bff;color:#fff;box-shadow:0 8px 24px #6b5bd333}
+@media(max-width:650px){.quiz-subject-switch{width:100%}.quiz-subject{flex:1}}

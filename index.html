@@ -1,0 +1,141 @@
+<!DOCTYPE html> <!-- Объявляет документ как HTML5. -->
+<html lang="ru"> <!-- Начинает HTML-документ и задаёт русский язык страницы. -->
+<head> <!-- Начинает метаданные страницы. -->
+  <meta charset="UTF-8"> <!-- Настраивает кодировку, масштаб или цвет интерфейса браузера. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Настраивает кодировку, масштаб или цвет интерфейса браузера. -->
+  <meta name="theme-color" content="#0b1020"> <!-- Настраивает кодировку, масштаб или цвет интерфейса браузера. -->
+  <title>PhysicsLab — интерактивная лаборатория</title> <!-- Задаёт название вкладки браузера. -->
+  <link rel="stylesheet" href="style.css"> <!-- Подключает файл стилей CSS. -->
+</head> <!-- Закрывает HTML-элемент, открытый выше. -->
+<body> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+  <div class="background-glow glow-one"></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+  <div class="background-glow glow-two"></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+  <header class="topbar"> <!-- Начинает метаданные страницы. -->
+    <a class="brand" href="#" aria-label="PhysicsLab — главная"> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+      <span class="brand-icon">P<span>+</span></span> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+      <span>Physics<span class="muted">Lab</span><small>ИНТЕРАКТИВНАЯ ЛАБОРАТОРИЯ</small></span> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+    </a> <!-- Закрывает HTML-элемент, открытый выше. -->
+    <nav aria-label="Основная навигация"> <!-- Группирует навигационные элементы. -->
+      <button class="nav-button active" data-page="lab">Лаборатория</button> <!-- Создаёт кнопку для переключения раздела или управления моделью. -->
+      <button class="nav-button" data-page="quiz">Проверка знаний</button> <!-- Создаёт кнопку для переключения раздела или управления моделью. -->
+      <button class="nav-button" data-page="research">Исследование</button> <!-- Создаёт кнопку для переключения раздела или управления моделью. -->
+    </nav> <!-- Закрывает HTML-элемент, открытый выше. -->
+    <div class="top-badge"><span class="status-dot"></span> Работает офлайн</div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+  </header> <!-- Закрывает HTML-элемент, открытый выше. -->
+
+  <main> <!-- Начинает основное содержимое страницы. -->
+    <section class="hero"> <!-- Начинает самостоятельный раздел страницы. -->
+      <div class="eyebrow"><span class="eyebrow-line"></span> УЧИСЬ ЧЕРЕЗ ЭКСПЕРИМЕНТ</div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+      <h1>Сложное становится<br><span class="gradient-text">наглядным.</span></h1> <!-- Выводит заголовок соответствующего уровня. -->
+      <p class="hero-copy">Меняй параметры в 14 моделях по физике и геометрии, наблюдай за визуализацией и проверяй, как формулы работают в реальном времени.</p> <!-- Выводит поясняющий текст. -->
+      <div class="hero-stats"> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        <div><strong>13</strong><span>интерактивных экспериментов</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        <div><strong>100%</strong><span>без внешних библиотек</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        <div><strong>∞</strong><span>возможностей эксперимента</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+      </div> <!-- Закрывает HTML-элемент, открытый выше. -->
+    </section> <!-- Закрывает HTML-элемент, открытый выше. -->
+
+    <section id="labPage" class="page-section"> <!-- Начинает самостоятельный раздел страницы. -->
+      <div class="section-heading"> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        <div><p class="eyebrow">ВЫБЕРИ МОДЕЛЬ</p><h2>Учебная лаборатория</h2></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        <div class="segmented" role="tablist" aria-label="Выбор модели"> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <button class="model-tab active" data-model="pendulum" role="tab" aria-selected="true">01 / Маятник</button> <!-- Создаёт кнопку для переключения раздела или управления моделью. -->
+          <button class="model-tab" data-model="triangle" role="tab" aria-selected="false">02 / Пифагор</button> <!-- Создаёт кнопку для переключения раздела или управления моделью. -->
+          <button class="model-tab" data-model="spring" role="tab" aria-selected="false">03 / Пружина</button> <!-- Создаёт кнопку для переключения раздела или управления моделью. -->
+          <button class="model-tab" data-model="ohm" role="tab" aria-selected="false">04 / Закон Ома</button> <!-- Создаёт кнопку для переключения раздела или управления моделью. -->
+        </div> <!-- Закрывает HTML-элемент, открытый выше. -->
+      </div> <!-- Закрывает HTML-элемент, открытый выше. -->
+
+      <div id="pendulumPanel" class="model-layout"> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        <article class="panel visual-panel"> <!-- Создаёт самостоятельную карточку содержимого. -->
+          <div class="panel-top"><div><span class="tiny-label">PHYSICS / 01</span><h3>Математический маятник</h3></div><span class="live-pill"><i></i> МОДЕЛЬ АКТИВНА</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <p class="panel-description">Наблюдай за колебаниями и выясни, как длина нити влияет на период.</p> <!-- Выводит поясняющий текст. -->
+          <div class="canvas-wrap"><canvas id="pendulumCanvas" aria-label="Анимация математического маятника"></canvas><div class="canvas-caption"><span>СХЕМА НЕ В МАСШТАБЕ</span><span id="motionLabel">ОЖИДАНИЕ</span></div></div> <!-- Создаёт холст Canvas, на котором JavaScript рисует модель. -->
+          <div class="controls-row"><button id="startPendulum" class="button primary">▶ Запустить</button><button id="resetPendulum" class="button secondary">↺ Сбросить</button><button id="pausePendulum" class="button secondary" disabled>Ⅱ Пауза</button></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        </article> <!-- Закрывает HTML-элемент, открытый выше. -->
+
+        <aside class="panel controls-panel"> <!-- Создаёт боковую панель с настройками. -->
+          <div class="panel-top"><div><span class="tiny-label">ПАРАМЕТРЫ</span><h3>Настрой эксперимент</h3></div><span class="number-chip">A</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <div class="control-group"><div class="control-title"><label for="lengthSlider">Длина нити</label><output id="lengthOutput">1.5 м</output></div><input id="lengthSlider" type="range" min="0.5" max="3" step="0.1" value="1.5"><div class="range-labels"><span>0.5 м</span><span>3.0 м</span></div></div> <!-- Создаёт ползунок, с помощью которого пользователь меняет параметр эксперимента. -->
+          <div class="control-group"><div class="control-title"><label for="angleSlider">Начальный угол</label><output id="angleOutput">20°</output></div><input id="angleSlider" type="range" min="5" max="45" step="1" value="20"><div class="range-labels"><span>5°</span><span>45°</span></div></div> <!-- Создаёт ползунок, с помощью которого пользователь меняет параметр эксперимента. -->
+          <div class="control-group"><div class="control-title"><label for="gravitySlider">Ускорение g</label><output id="gravityOutput">9.81 м/с²</output></div><input id="gravitySlider" type="range" min="1" max="20" step="0.1" value="9.81"><div class="range-labels"><span>1 м/с²</span><span>20 м/с²</span></div></div> <!-- Создаёт ползунок, с помощью которого пользователь меняет параметр эксперимента. -->
+          <div class="metrics-grid"><div class="metric"><span>ПЕРИОД T</span><strong id="periodValue">2.46 <small>с</small></strong><em>время одного цикла</em></div><div class="metric"><span>ЧАСТОТА f</span><strong id="frequencyValue">0.41 <small>Гц</small></strong><em>циклов за секунду</em></div></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <div class="formula-box"><span>ФОРМУЛА МОДЕЛИ</span><div>T = 2π √(L / g)</div><p>При небольших углах период почти не зависит от амплитуды.</p></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        </aside> <!-- Закрывает HTML-элемент, открытый выше. -->
+      </div> <!-- Закрывает HTML-элемент, открытый выше. -->
+
+      <div id="trianglePanel" class="model-layout hidden"> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        <article class="panel visual-panel"> <!-- Создаёт самостоятельную карточку содержимого. -->
+          <div class="panel-top"><div><span class="tiny-label">GEOMETRY / 02</span><h3>Теорема Пифагора</h3></div><span class="live-pill"><i></i> ПЕРЕСЧЁТ В РЕАЛЬНОМ ВРЕМЕНИ</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <p class="panel-description">Измени катеты и посмотри, как меняется гипотенуза прямоугольного треугольника.</p> <!-- Выводит поясняющий текст. -->
+          <div class="canvas-wrap triangle-wrap"><canvas id="triangleCanvas" aria-label="Интерактивная модель прямоугольного треугольника"></canvas><div class="canvas-caption"><span>a² + b² = c²</span><span>90°</span></div></div> <!-- Создаёт холст Canvas, на котором JavaScript рисует модель. -->
+          <div class="formula-box"><span>ПОЧЕМУ ЭТО РАБОТАЕТ?</span><div>c = √(a² + b²)</div><p>Квадрат гипотенузы равен сумме квадратов катетов.</p></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        </article> <!-- Закрывает HTML-элемент, открытый выше. -->
+        <aside class="panel controls-panel"> <!-- Создаёт боковую панель с настройками. -->
+          <div class="panel-top"><div><span class="tiny-label">ПАРАМЕТРЫ</span><h3>Измени стороны</h3></div><span class="number-chip">B</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <div class="control-group"><div class="control-title"><label for="aSlider">Катет a</label><output id="aOutput">3.0</output></div><input id="aSlider" type="range" min="1" max="10" step="0.5" value="3"><div class="range-labels"><span>1</span><span>10</span></div></div> <!-- Создаёт ползунок, с помощью которого пользователь меняет параметр эксперимента. -->
+          <div class="control-group"><div class="control-title"><label for="bSlider">Катет b</label><output id="bOutput">4.0</output></div><input id="bSlider" type="range" min="1" max="10" step="0.5" value="4"><div class="range-labels"><span>1</span><span>10</span></div></div> <!-- Создаёт ползунок, с помощью которого пользователь меняет параметр эксперимента. -->
+          <div class="metrics-grid single"><div class="metric"><span>ГИПОТЕНУЗА c</span><strong id="hypotenuseValue">5.00</strong><em>рассчитана по теореме Пифагора</em></div></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <div class="formula-box"><span>ПОДСТАНОВКА</span><div id="substitution">c = √(3² + 4²) = 5</div><p>Числа в формуле обновляются при каждом изменении ползунков.</p></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <div class="hint-box">💡 <span>Эксперимент: увеличь оба катета в 2 раза. Во сколько раз увеличится гипотенуза?</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        </aside> <!-- Закрывает HTML-элемент, открытый выше. -->
+      </div> <!-- Закрывает HTML-элемент, открытый выше. -->
+
+      <div id="springPanel" class="model-layout hidden"> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        <article class="panel visual-panel"> <!-- Создаёт самостоятельную карточку содержимого. -->
+          <div class="panel-top"><div><span class="tiny-label">PHYSICS / 03</span><h3>Закон Гука: пружина</h3></div><span class="live-pill"><i></i> ИНТЕРАКТИВНЫЙ ОПЫТ</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <p class="panel-description">Меняй жёсткость пружины и приложенную силу. Смотри, насколько удлинится пружина в рамках закона Гука.</p> <!-- Выводит поясняющий текст. -->
+          <div class="canvas-wrap"><canvas id="springCanvas" aria-label="Модель растяжения пружины"></canvas><div class="canvas-caption"><span>F = k · x</span><span id="springState">РАВНОВЕСИЕ</span></div></div> <!-- Создаёт холст Canvas, на котором JavaScript рисует модель. -->
+          <div class="controls-row"><button id="springAnimate" class="button primary">▶ Показать растяжение</button><button id="springReset" class="button secondary">↺ Сбросить</button></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        </article> <!-- Закрывает HTML-элемент, открытый выше. -->
+        <aside class="panel controls-panel"> <!-- Создаёт боковую панель с настройками. -->
+          <div class="panel-top"><div><span class="tiny-label">ПАРАМЕТРЫ</span><h3>Измени условия</h3></div><span class="number-chip">C</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <div class="control-group"><div class="control-title"><label for="forceSlider">Приложенная сила F</label><output id="forceOutput">5 Н</output></div><input id="forceSlider" type="range" min="1" max="20" step="1" value="5"><div class="range-labels"><span>1 Н</span><span>20 Н</span></div></div> <!-- Создаёт ползунок, с помощью которого пользователь меняет параметр эксперимента. -->
+          <div class="control-group"><div class="control-title"><label for="springKSlider">Жёсткость пружины k</label><output id="springKOutput">10 Н/м</output></div><input id="springKSlider" type="range" min="2" max="40" step="1" value="10"><div class="range-labels"><span>2 Н/м</span><span>40 Н/м</span></div></div> <!-- Создаёт ползунок, с помощью которого пользователь меняет параметр эксперимента. -->
+          <div class="metrics-grid"><div class="metric"><span>УДЛИНЕНИЕ x</span><strong id="stretchValue">0.50 <small>м</small></strong><em>растяжение пружины</em></div><div class="metric"><span>СИЛА F</span><strong id="springForceValue">5 <small>Н</small></strong><em>внешняя сила</em></div></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <div class="formula-box"><span>ЗАКОН ГУКА</span><div>F = k · x → x = F / k</div><p>В пределах упругой деформации удлинение прямо пропорционально силе и обратно пропорционально жёсткости.</p></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <div class="hint-box">💡 <span>Опыт: удвой силу при неизменной жёсткости. Удлинение тоже должно удвоиться.</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        </aside> <!-- Закрывает HTML-элемент, открытый выше. -->
+      </div> <!-- Закрывает HTML-элемент, открытый выше. -->
+
+      <div id="ohmPanel" class="model-layout hidden"> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        <article class="panel visual-panel"> <!-- Создаёт самостоятельную карточку содержимого. -->
+          <div class="panel-top"><div><span class="tiny-label">PHYSICS / 04</span><h3>Закон Ома: электрическая цепь</h3></div><span class="live-pill"><i></i> ТОК ВИЗУАЛИЗИРОВАН</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <p class="panel-description">Регулируй напряжение и сопротивление, чтобы увидеть, как меняется сила тока в простой цепи.</p> <!-- Выводит поясняющий текст. -->
+          <div class="canvas-wrap"><canvas id="ohmCanvas" aria-label="Визуальная схема электрической цепи"></canvas><div class="canvas-caption"><span>I = U / R</span><span id="currentState">ЦЕПЬ ГОТОВА</span></div></div> <!-- Создаёт холст Canvas, на котором JavaScript рисует модель. -->
+          <div class="controls-row"><button id="toggleCurrent" class="button primary">Ⅱ Остановить поток</button><button id="resetOhm" class="button secondary">↺ Сбросить</button></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        </article> <!-- Закрывает HTML-элемент, открытый выше. -->
+        <aside class="panel controls-panel"> <!-- Создаёт боковую панель с настройками. -->
+          <div class="panel-top"><div><span class="tiny-label">ПАРАМЕТРЫ</span><h3>Настрой цепь</h3></div><span class="number-chip">D</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <div class="control-group"><div class="control-title"><label for="voltageSlider">Напряжение U</label><output id="voltageOutput">6 В</output></div><input id="voltageSlider" type="range" min="1" max="24" step="1" value="6"><div class="range-labels"><span>1 В</span><span>24 В</span></div></div> <!-- Создаёт ползунок, с помощью которого пользователь меняет параметр эксперимента. -->
+          <div class="control-group"><div class="control-title"><label for="resistanceSlider">Сопротивление R</label><output id="resistanceOutput">3 Ом</output></div><input id="resistanceSlider" type="range" min="1" max="12" step="1" value="3"><div class="range-labels"><span>1 Ом</span><span>12 Ом</span></div></div> <!-- Создаёт ползунок, с помощью которого пользователь меняет параметр эксперимента. -->
+          <div class="metrics-grid"><div class="metric"><span>СИЛА ТОКА I</span><strong id="currentValue">2.00 <small>А</small></strong><em>ток в цепи</em></div><div class="metric"><span>МОЩНОСТЬ P</span><strong id="powerValue">12.0 <small>Вт</small></strong><em>электрическая мощность</em></div></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <div class="formula-box"><span>ЗАКОН ОМА</span><div>I = U / R</div><p>Для участка цепи сила тока равна напряжению, делённому на сопротивление. Мощность P = U · I.</p></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+          <div class="hint-box">💡 <span>Опыт: удвой сопротивление при постоянном напряжении. Сила тока должна уменьшиться вдвое.</span></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        </aside> <!-- Закрывает HTML-элемент, открытый выше. -->
+      </div> <!-- Закрывает HTML-элемент, открытый выше. -->
+    </section> <!-- Закрывает HTML-элемент, открытый выше. -->
+
+    <section id="quizPage" class="page-section hidden"> <!-- Начинает самостоятельный раздел страницы. -->
+      <div class="section-heading"><div><p class="eyebrow">ЗАКРЕПИ ЗНАНИЯ</p><h2>Проверка знаний</h2><p id="quizSubjectDescription" class="muted">10 вопросов по физике: механика, свет, энергия и волны.</p><div class="quiz-subject-switch" role="group" aria-label="Выбери предмет"><button class="quiz-subject active" data-quiz-subject="physics" type="button">⚛ Физика</button><button class="quiz-subject" data-quiz-subject="geometry" type="button">△ Геометрия</button></div></div></div> <!-- Показывает выбор предмета и краткое описание теста. -->
+      <div class="quiz-layout"><article class="panel quiz-panel"><div class="quiz-progress"><span id="questionCounter">ВОПРОС 1 ИЗ 10</span><span id="scoreLive">СЧЁТ: 0</span></div><div class="progress-track"><div id="progressBar"></div></div><h3 id="questionText">Загрузка вопроса…</h3><div id="answers" class="answers"></div><div id="feedback" class="feedback" aria-live="polite"></div><div class="quiz-actions"><button id="nextQuestion" class="button primary" disabled>Следующий вопрос →</button></div></article><aside class="panel results-panel"><span class="tiny-label">ТВОЙ ПРОГРЕСС</span><div class="score-circle"><strong id="currentScore">0</strong><span>баллов</span></div><p id="scoreMessage">Ответь на вопросы, чтобы увидеть результат.</p><div class="history-box"><h4>Последние результаты</h4><div id="historyList">Пока нет попыток.</div><button id="clearHistory" class="text-button">Очистить историю</button></div></aside></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+    </section> <!-- Закрывает HTML-элемент, открытый выше. -->
+
+    <section id="researchPage" class="page-section hidden"> <!-- Начинает самостоятельный раздел страницы. -->
+      <div class="section-heading"><div><p class="eyebrow">НАУЧНЫЙ ПОДХОД</p><h2>Исследование эффективности</h2><p class="muted">Как проверить, помогает ли интерактивная модель учиться лучше?</p></div></div> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+      <div class="research-grid"> <!-- Создаёт элемент интерфейса; классы задают его оформление и поведение. -->
+        <article class="panel research-card"><span class="research-number">01</span><h3>Гипотеза</h3><p>Использование интерактивных моделей может улучшить понимание физических и геометрических зависимостей по сравнению с изучением только текста и статичных рисунков.</p></article> <!-- Создаёт самостоятельную карточку содержимого. -->
+        <article class="panel research-card"><span class="research-number">02</span><h3>Дизайн эксперимента</h3><p>Сформировать две сопоставимые группы. Первая изучает тему с помощью PhysicsLab, вторая — по обычному материалу. Затем обе группы выполняют одинаковый тест.</p></article> <!-- Создаёт самостоятельную карточку содержимого. -->
+        <article class="panel research-card"><span class="research-number">03</span><h3>Что измеряем?</h3><p>Первичный показатель — результат одинакового теста. Дополнительно можно сравнить время выполнения, уверенность учеников и результат повторного теста через несколько дней.</p></article> <!-- Создаёт самостоятельную карточку содержимого. -->
+        <article class="panel research-card"><span class="research-number">04</span><h3>Как сделать честно?</h3><p>Одинаковые темы, время обучения, инструкция и задания. По возможности распределить учеников случайно, провести тест до и после обучения и не подменять результаты предположениями.</p></article> <!-- Создаёт самостоятельную карточку содержимого. -->
+      </div> <!-- Закрывает HTML-элемент, открытый выше. -->
+      <article class="panel research-table-panel"><h3>Таблица для реальных результатов</h3><p class="muted">Заполни после проведения урока. Не выдавай примерные числа за реальные измерения.</p><div class="table-scroll"><table><thead><tr><th>Группа</th><th>Число учеников</th><th>Средний балл до</th><th>Средний балл после</th><th>Изменение</th></tr></thead><tbody><tr><td>Интерактивная</td><td>_____</td><td>_____</td><td>_____</td><td>_____</td></tr><tr><td>Обычный материал</td><td>_____</td><td>_____</td><td>_____</td><td>_____</td></tr></tbody></table></div><div class="formula-box"><span>РАСЧЁТ СРЕДНЕГО БАЛЛА</span><div>Среднее = сумма баллов / число участников</div><p>Изменение = средний балл после − средний балл до.</p></div></article> <!-- Создаёт самостоятельную карточку содержимого. -->
+      <article class="panel limitations"><h3>Ограничения исследования</h3><ul><li>Небольшая выборка не позволяет уверенно обобщать выводы на всех учеников.</li><li>На результат влияют исходные знания, интерес к теме, преподаватель и сложность теста.</li><li>Если группы изначально различаются, нужно учитывать результаты входного теста.</li><li>Корректный вывод должен опираться на собранные данные, а не на ожидания автора.</li></ul></article> <!-- Создаёт самостоятельную карточку содержимого. -->
+    </section> <!-- Закрывает HTML-элемент, открытый выше. -->
+
+    <section class="bottom-cta"><div><p class="eyebrow">ТВОЯ ЗАДАЧА</p><h2>Не заучивай формулу.<br><span class="gradient-text">Исследуй её.</span></h2></div><button class="button primary" id="goToLab">Открыть лабораторию ↗</button></section> <!-- Начинает самостоятельный раздел страницы. -->
+  </main> <!-- Закрывает HTML-элемент, открытый выше. -->
+  <footer><div class="brand small-brand"><span class="brand-icon">P<span>+</span></span><span>Physics<span class="muted">Lab</span></span></div><span>Учебный проект · HTML / CSS / JavaScript / Canvas</span><span>Создан для экспериментов</span></footer> <!-- Начинает нижнюю область сайта. -->
+  <script src="script.js"></script> <!-- Подключает JavaScript, управляющий интерактивностью сайта. -->
+</body> <!-- Закрывает HTML-элемент, открытый выше. -->
+</html> <!-- Закрывает HTML-элемент, открытый выше. -->
